@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "Alumnos";
+    //string serverPath = System.Configuration.ConfigurationManager.AppSettings["UrlWebApp"];
+    string urlWebApi = System.Configuration.ConfigurationManager.AppSettings["UrlWebApi"];
+
+
+}
+
+<link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="//cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" id="searchNav" href="#searchTab">Buscar</a></li>
+    <li><a data-toggle="tab" id="studentNav" href="#studentTab">Alumno</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="searchTab" class="tab-pane fade in active">
+        <form id="searchForm" class="form-group" name="searchForm" role="form">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <div class="col-md-offset-6 col-md-6">
+                        <div class="input-group">
+                            <input type="text" id="input-name-search" name="FirstNameSearch" class="form-control pull-right" placeholder="Buscar por nombre...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="btnSearchStudents">¡Buscar!</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-12"><br /></div>
+
+                    <table id="tableStudents" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed table-responsive" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Apellidos</th>
+                                <th class="text-center">Fecha de Nacimiento</th>
+                                <th class="text-center">Género</th>
+                                <th class="text-center">Estatus</th>
+                                <th class="none">Correo</th>
+                                <th class="none">Teléfono</th>
+                                <th class="none">RFC</th>
+                                <th class="none">CURP</th>
+                                <th class="none">Estado</th>
+                                <th class="none">CP</th>
+                                <th class="none">Archivos</th>
+                                <th class="text-center"></th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+
+
+                </div>
+
+            </div>
+
+        </form>
+
+
+    </div>
+    <div id="studentTab" class="tab-pane fade">
+        <form id="studentForm" class="form-group" name="studentForm" role="form" enctype="multipart/form-data">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h1 id="titleStudent">Agregar alumno</h1>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <legend>Datos del alumno</legend>
+                        <input type="hidden" id="hdnStudentId" name="hdnStudentId" />
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputFirstName">Primer nombre *</label>
+                                <input class="form-control" id="inputFirstName" name="FirstName" type="text" required maxlength="20" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputMiddleName">Segundo nombre</label>
+                                <input class="form-control" id="inputMiddleName" name="MiddleName" type="text" maxlength="20" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputLastName">Apellidos *</label>
+                                <input class="form-control" id="inputLastName" name="LastName" type="text" required maxlength="50" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputBirthDate">Fecha de nacimiento *</label>
+                                <input class="form-control" id="inputBirthDate" name="BirthDate" type="date" required />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputRFC">RFC</label>
+                                <input class="form-control" id="inputRFC" name="RFC" type="text" pattern="([Ñña-zA-Z]{3,4}[0-9]{6}[0-9a-zA-Z]{3})" title="El RFC no es válido, verifique" maxlength="13" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputCURP">CURP</label>
+                                <input class="form-control" id="inputCURP" name="CURP" type="text" pattern="([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)" title="El CURP no es válido, verifique" maxlength="18" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputState">Estado</label>
+                                <select class="form-control" id="inputState" name="State">
+                                    <option value="">Seleccione uno...</option>
+                                    <option value="Aguascalientes">Aguascalientes</option>
+                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California Sur">Baja California Sur</option>
+                                    <option value="Campeche">Campeche</option>
+                                    <option value="Chiapas">Chiapas</option>
+                                    <option value="Chihuahua">Chihuahua</option>
+                                    <option value="CDMX">Ciudad de México</option>
+                                    <option value="Coahuila">Coahuila</option>
+                                    <option value="Colima">Colima</option>
+                                    <option value="Durango">Durango</option>
+                                    <option value="Estado de México">Estado de México</option>
+                                    <option value="Guanajuato">Guanajuato</option>
+                                    <option value="Guerrero">Guerrero</option>
+                                    <option value="Hidalgo">Hidalgo</option>
+                                    <option value="Jalisco">Jalisco</option>
+                                    <option value="Michoacán">Michoacán</option>
+                                    <option value="Morelos">Morelos</option>
+                                    <option value="Nayarit">Nayarit</option>
+                                    <option value="Nuevo León">Nuevo León</option>
+                                    <option value="Oaxaca">Oaxaca</option>
+                                    <option value="Puebla">Puebla</option>
+                                    <option value="Querétaro">Querétaro</option>
+                                    <option value="Quintana Roo">Quintana Roo</option>
+                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                    <option value="Sinaloa">Sinaloa</option>
+                                    <option value="Sonora">Sonora</option>
+                                    <option value="Tabasco">Tabasco</option>
+                                    <option value="Tamaulipas">Tamaulipas</option>
+                                    <option value="Tlaxcala">Tlaxcala</option>
+                                    <option value="Veracruz">Veracruz</option>
+                                    <option value="Yucatán">Yucatán</option>
+                                    <option value="Zacatecas">Zacatecas</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputPostalCode">Código postal</label>
+                                <input class="form-control" id="inputPostalCode" name="PostalCode" type="text" required pattern="[0-9]{5}" title="El código postal consta de 5 dígitos" maxlength="5" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputGender">Género *</label>
+                                <select class="form-control" id="inputGender" name="Gender">
+                                    <option value="">Seleccione uno...</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputPhoneNumber">Número telefónico</label>
+                                <input class="form-control" id="inputPhoneNumber" name="PhoneNumber" type="tel" required maxlength="10" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputEmail">Correo electrónico *</label>
+                                <input class="form-control" id="inputEmail" name="Email" type="email" required maxlength="50" />
+                            </div>
+
+                            <div class="form-group form-check col-md-4">
+                                <br />
+                                <label class="form-check-input control-label" for="checkActive">
+                                    ¿Desea que el alumno este activo?
+                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="checkActive">
+
+                            </div>
+                        </div>
+                        <div class="col-md-12"></div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="inputFile1">Primer archivo *</label>
+                                <input class="form-control" id="inputFile1" name="inputFile1" type="file" required />
+                            </div>
+                            <div class="form-group col-md-6 fileDownload">
+                                <label class="control-label">Ver archivo</label> <br />
+                                <a href="#" id="fileDownload1" name="fileDownload1" target="_blank" type="button" class="btn btn-default"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="inputFile2">Segundo archivo *</label>
+                                <input class="form-control" id="inputFile2" name="inputFile2" type="file" required />
+                            </div>
+                            <div class="form-group col-md-6 fileDownload">
+                                <label class="control-label">Ver Archivo</label> <br />
+                                <a href="#" id="fileDownload2" name="fileDownload2" target="_blank" type="button" class="btn btn-default"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="inputFile3">Tercer archivo *</label>
+                                <input class="form-control" id="inputFile3" name="inputFile3" type="file" required />
+                            </div>
+                            <div class="form-group col-md-6 fileDownload">
+                                <label class="control-label">Ver archivo</label> <br />
+                                <a href="#" id="fileDownload3" name="fileDownload3" target="_blank" type="button" class="btn btn-default"><i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputPassword">Contraseña *</label>
+                                <input class="form-control" id="inputPassword" name="Password" type="password" required maxlength="10" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="inputRepeatPassword">Repetir contraseña *</label>
+                                <input class="form-control" id="inputRepeatPassword" name="RepeatPassword" type="password" required maxlength="10" />
+                            </div>
+                        </div>
+                        
+                    </fieldset>
+                    <div class="row"></div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-primary" id="btnSaveStudent" name="btnSaveStudent"><i class="glyphicon glyphicon-upload"></i>&nbsp;Guardar</button>
+                </div>
+            </div>
+        </form>
+
+        
+    </div>
+
+</div>
+
+
+
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    <script src="~/Assets/JavaScript/Student.js"></script>
+    <script>
+    $(document).ready(function () {
+
+        var args = {
+            UrlWepApi: '@urlWebApi'
+        };
+
+        MIDS207_Project.Student.npMainFunction(args);
+    });
+    </script>
+}
