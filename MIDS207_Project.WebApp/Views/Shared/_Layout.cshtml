@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using MIDS207_Project.Resources
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,31 +11,26 @@
     <link href="~/Assets/Plugin/LoadingPoints/css/spin3bounce.css" rel="stylesheet" />
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Alumnos", "Index", "Student")</li>
-                </ul>
+            <div class="div-header">
+                <img class="image-logo" src="~/Resources/Images/Image_CPDS_Logo.png" alt="CPDS Logo" longdesc="https://www.cpds.edu.mx" />
+                <div class="header-title">
+                    <h1><strong>@Resource.Title1</strong></h1>
+                    <h2><strong>@Resource.Title2</strong></h2>
+                </div>
             </div>
         </div>
     </div>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p class="pull-left">&copy; @DateTime.Now.Year - @Resource.Footer_Title1</p>
+            <p class="pull-right">@Resource.Title2</p>
         </footer>
     </div>
 

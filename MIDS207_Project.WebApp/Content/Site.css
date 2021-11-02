@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 130px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -28,3 +29,72 @@ textarea {
     color: #F00;
     background-color: #FFF;
 }
+
+div.div-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 0 1.5em 1.5em;
+}
+
+
+div.header-title {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    color: #FFF;
+}
+
+img.image-logo {
+    display: block;
+}
+
+.navbar {
+    min-height: 100px;
+}
+
+.navbar-inverse {
+    background-color: #009dda !important;
+    border-color: #0278a7 !important;
+    box-shadow: 0 6px 8px rgba(0,0,0,.15);
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #003044;
+            background-color: #fff;
+        }
+
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+        background-color: #0278a7;
+    }
+
+    .navbar-inverse .navbar-toggle {
+        border-color: #0278a7;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #fff;
+        background-color: #009dda;
+    }
+
+        .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+            color: #003044;
+            background-color: #fff;
+        }
+
+    .navbar-nav > .open > a:hover,
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+        color: #003044;
+        background-color: #fff;
+    }

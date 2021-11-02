@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Footer-Title1" xml:space="preserve">
+    <value>Julio César Guzmán Cortés</value>
+  </data>
+  <data name="Student_Active_Label" xml:space="preserve">
+    <value>¿Desea que el alumno este activo?</value>
+  </data>
+  <data name="Student_Add" xml:space="preserve">
+    <value>agregar alumno</value>
+  </data>
+  <data name="Student_BirthDate_Label" xml:space="preserve">
+    <value>Fecha de nacimiento *</value>
+  </data>
+  <data name="Student_Close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="Student_CP_Label" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="Student_CP_Placeholder" xml:space="preserve">
+    <value>El código postal consta de 5 dígitos</value>
+  </data>
+  <data name="Student_CURP_Label" xml:space="preserve">
+    <value>CURP</value>
+  </data>
+  <data name="Student_CURP_Title" xml:space="preserve">
+    <value>El CURP no es válido, verifique</value>
+  </data>
+  <data name="Student_Email_Label" xml:space="preserve">
+    <value>Correo electrónico *</value>
+  </data>
+  <data name="Student_Fieldset" xml:space="preserve">
+    <value>Datos del alumno</value>
+  </data>
+  <data name="Student_File1_Label" xml:space="preserve">
+    <value>Primer archivo *</value>
+  </data>
+  <data name="Student_File2_Label" xml:space="preserve">
+    <value>Segundo archivo *</value>
+  </data>
+  <data name="Student_File3_Label" xml:space="preserve">
+    <value>Tercer archivo *</value>
+  </data>
+  <data name="Student_FirstName_Label" xml:space="preserve">
+    <value>Primer nombre *</value>
+  </data>
+  <data name="Student_Gender_Label" xml:space="preserve">
+    <value>Género *</value>
+  </data>
+  <data name="Student_Gender_Placeholder" xml:space="preserve">
+    <value>Seleccione uno...</value>
+  </data>
+  <data name="Student_LastName_Label" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="Student_MiddleName_Label" xml:space="preserve">
+    <value>Segundo nombre</value>
+  </data>
+  <data name="Student_Ok" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="Student_Password_Label" xml:space="preserve">
+    <value>Contraseña *</value>
+  </data>
+  <data name="Student_PhoneNumber_Label" xml:space="preserve">
+    <value>Número teléfonico</value>
+  </data>
+  <data name="Student_RepeatPassword_Label" xml:space="preserve">
+    <value>Repetir contraseña *</value>
+  </data>
+  <data name="Student_RFC_Label" xml:space="preserve">
+    <value>RFC</value>
+  </data>
+  <data name="Student_RFC_Title" xml:space="preserve">
+    <value>El RFC no es válido, verifique</value>
+  </data>
+  <data name="Student_Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Student_Search_Placeholder" xml:space="preserve">
+    <value>Buscar por nombre...</value>
+  </data>
+  <data name="Student_Search_ThBirthDate" xml:space="preserve">
+    <value>Fecha de Nacimiento</value>
+  </data>
+  <data name="Student_Search_ThCP" xml:space="preserve">
+    <value>CP</value>
+  </data>
+  <data name="Student_Search_ThCURP" xml:space="preserve">
+    <value>CURP</value>
+  </data>
+  <data name="Student_Search_ThEmail" xml:space="preserve">
+    <value>Correo</value>
+  </data>
+  <data name="Student_Search_ThFiles" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="Student_Search_ThGender" xml:space="preserve">
+    <value>Género</value>
+  </data>
+  <data name="Student_Search_ThLastName" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="Student_Search_ThName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Student_Search_ThPhoneNumber" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="Student_Search_ThRFC" xml:space="preserve">
+    <value>RFC</value>
+  </data>
+  <data name="Student_Search_ThState" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Student_Search_ThStatus" xml:space="preserve">
+    <value>Estatus</value>
+  </data>
+  <data name="Student_State_Label" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Student_State_Placeholder" xml:space="preserve">
+    <value>Seleccione uno...</value>
+  </data>
+  <data name="Student_Tab_Search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="Student_Tab_Search2" xml:space="preserve">
+    <value>¡Buscar!</value>
+  </data>
+  <data name="Student_Tab_Student" xml:space="preserve">
+    <value>Alumno</value>
+  </data>
+  <data name="Student_ViewFile_Label" xml:space="preserve">
+    <value>Ver archivo</value>
+  </data>
+  <data name="Title1" xml:space="preserve">
+    <value>Colegio de Postgrado en desarrollo de Software</value>
+  </data>
+  <data name="Title2" xml:space="preserve">
+    <value>MIDS 207 - Programación y Desarrollo Web</value>
+  </data>
+</root>

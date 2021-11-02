@@ -298,7 +298,11 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
 
                     $.each(student.Files, function (index, value) {
                         $('#fileDownload' + (index + 1)).attr('title', value.FileName);
-                        $('#fileDownload' + (index + 1)).attr('href', defaults.UrlWepApi + "Files/" + student.StudentID + "/" + value.FileName);
+                        /*$('#fileDownload' + (index + 1)).attr('href', defaults.UrlWepApi + "Files/" + student.StudentID + "/" + value.FileName);*/
+                        $("#myModalLabel").text(value.FileName);
+                        $('#fileDownload' + (index + 1)).click(function () {
+                            $("#frameFile").attr('src', defaults.UrlWepApi + "Files/" + student.StudentID + "/" + value.FileName);
+                        });
                     });
 
 
@@ -395,25 +399,26 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
     function validateStudent() {
         $("#studentForm").validate({
             rules: {
-                MiddleName: {
-                    required: true,
+                MiddleName: {                    
                     maxlength: 50
                 },
                 FirstName: {
                     required: true,
+                    maxlength: 50
                 },
                 LastName: {
                     required: true,
+                    maxlength: 50
                 },
-                PostalCode: {
-                    required: true
-                },
-                Gender: {
-                    required: true
+                PostalCode: {                    
+                    maxlength: 5
                 },
                 State: {
                     required: true
                 },
+                Gender: {
+                    required: true
+                },                
                 Password: {
                     required: true
                 },
