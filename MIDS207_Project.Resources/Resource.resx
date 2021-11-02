@@ -123,14 +123,20 @@
   <data name="Student_Active_Label" xml:space="preserve">
     <value>¿Desea que el alumno este activo?</value>
   </data>
+  <data name="Student_Active_Span" xml:space="preserve">
+    <value>Activo</value>
+  </data>
   <data name="Student_Add" xml:space="preserve">
-    <value>agregar alumno</value>
+    <value>Agregar alumno</value>
   </data>
   <data name="Student_BirthDate_Label" xml:space="preserve">
     <value>Fecha de nacimiento *</value>
   </data>
   <data name="Student_Close" xml:space="preserve">
     <value>Cerrar</value>
+  </data>
+  <data name="Student_Confirm_Inactive" xml:space="preserve">
+    <value>¿Está usted seguro que desea Eliminar (Inactivar) el usuario?</value>
   </data>
   <data name="Student_CP_Label" xml:space="preserve">
     <value>Código postal</value>
@@ -143,6 +149,15 @@
   </data>
   <data name="Student_CURP_Title" xml:space="preserve">
     <value>El CURP no es válido, verifique</value>
+  </data>
+  <data name="Student_Delete_Title" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Student_Edit" xml:space="preserve">
+    <value>Editar alumno</value>
+  </data>
+  <data name="Student_Edit_Title" xml:space="preserve">
+    <value>Editar</value>
   </data>
   <data name="Student_Email_Label" xml:space="preserve">
     <value>Correo electrónico *</value>
@@ -168,11 +183,20 @@
   <data name="Student_Gender_Placeholder" xml:space="preserve">
     <value>Seleccione uno...</value>
   </data>
+  <data name="Student_Inactive_Span" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
   <data name="Student_LastName_Label" xml:space="preserve">
     <value>Apellidos</value>
   </data>
+  <data name="Student_Message_Inactive" xml:space="preserve">
+    <value>¡Se ha inactivado correctamente el alumno!</value>
+  </data>
   <data name="Student_MiddleName_Label" xml:space="preserve">
     <value>Segundo nombre</value>
+  </data>
+  <data name="Student_No_Confirm" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="Student_Ok" xml:space="preserve">
     <value>Aceptar</value>
@@ -251,6 +275,9 @@
   </data>
   <data name="Student_ViewFile_Label" xml:space="preserve">
     <value>Ver archivo</value>
+  </data>
+  <data name="Student_Yes_Confirm" xml:space="preserve">
+    <value>Sí</value>
   </data>
   <data name="Title1" xml:space="preserve">
     <value>Colegio de Postgrado en desarrollo de Software</value>

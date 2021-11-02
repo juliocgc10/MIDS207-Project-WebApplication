@@ -276,49 +276,33 @@
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="~/Scripts/jqueryDataTables_es-mx.js"></script>
 
     <script src="~/Assets/JavaScript/Student.js"></script>
     <script>
-         
+
     </script>
     <script>
     $(document).ready(function () {
 
         var args = {
-            UrlWepApi: '@urlWebApi'
+            UrlWepApi: '@urlWebApi',
+            Messages: {
+                Student_Add: '@Resource.Student_Add',
+                Student_Active_Span: '@Resource.Student_Active_Span',
+                Student_Inactive_Span: '@Resource.Student_Inactive_Span',
+                Student_Delete_Title: '@Resource.Student_Delete_Title',
+                Student_Edit_Title: '@Resource.Student_Edit_Title',
+                Student_Confirm_Inactive: '@Resource.Student_Confirm_Inactive',
+                Student_Yes_Confirm: '@Resource.Student_Yes_Confirm',
+                Student_No_Confirm: '@Resource.Student_No_Confirm',
+                Student_Message_Inactive: '@Resource.Student_Message_Inactive',
+                Student_Edit: '@Resource.Student_Edit'
+            }
         };
 
         MIDS207_Project.Student.npMainFunction(args);
 
-
-        $.extend(true, $.fn.dataTable.defaults, {
-                "language":
-                    {
-                        "decimal": "",
-                        "emptyTable": '@DataTableLanguages.emptyTable',
-                        "info": "@DataTableLanguages.info",
-                        "infoEmpty": "@DataTableLanguages.infoEmpty",
-                        "infoFiltered": "@DataTableLanguages.infoFiltered",
-                        "infoPostFix": "",
-                        "thousands": ",",
-                        "lengthMenu": "@DataTableLanguages.lengthMenu",
-                        "loadingRecords": "@DataTableLanguages.LoadingRecords",
-                        "Processing": "@DataTableLanguages.Processing",
-                        "search": "@DataTableLanguages.search",
-                        "zeroRecords": "@DataTableLanguages.zeroRecords",
-                        "SearchPlaceholder": "@DataTableLanguages.SearchPlaceholder",
-                        "paginate": {
-                            "first": "@DataTableLanguages.paginate_first",
-                            "last": "@DataTableLanguages.paginate_last",
-                            "next": "@DataTableLanguages.paginate_next",
-                            "previous": "@DataTableLanguages.paginate_previous",
-                        },
-                        "aria": {
-                            "sortAscending": "@DataTableLanguages.sortAscending",
-                            "sortDescending": "@DataTableLanguages.sortDescending",
-                        }
-                    }
-            });
     });
 
     </script>

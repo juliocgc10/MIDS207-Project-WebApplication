@@ -79,7 +79,16 @@ namespace MIDS207_Project.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to agregar alumno.
+        ///   Looks up a localized string similar to Activo.
+        /// </summary>
+        public static string Student_Active_Span {
+            get {
+                return ResourceManager.GetString("Student_Active_Span", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agregar alumno.
         /// </summary>
         public static string Student_Add {
             get {
@@ -102,6 +111,15 @@ namespace MIDS207_Project.Resources {
         public static string Student_Close {
             get {
                 return ResourceManager.GetString("Student_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¿Está usted seguro que desea Eliminar (Inactivar) el usuario?.
+        /// </summary>
+        public static string Student_Confirm_Inactive {
+            get {
+                return ResourceManager.GetString("Student_Confirm_Inactive", resourceCulture);
             }
         }
         
@@ -138,6 +156,33 @@ namespace MIDS207_Project.Resources {
         public static string Student_CURP_Title {
             get {
                 return ResourceManager.GetString("Student_CURP_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eliminar.
+        /// </summary>
+        public static string Student_Delete_Title {
+            get {
+                return ResourceManager.GetString("Student_Delete_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editar alumno.
+        /// </summary>
+        public static string Student_Edit {
+            get {
+                return ResourceManager.GetString("Student_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        public static string Student_Edit_Title {
+            get {
+                return ResourceManager.GetString("Student_Edit_Title", resourceCulture);
             }
         }
         
@@ -214,6 +259,15 @@ namespace MIDS207_Project.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactivo.
+        /// </summary>
+        public static string Student_Inactive_Span {
+            get {
+                return ResourceManager.GetString("Student_Inactive_Span", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apellidos.
         /// </summary>
         public static string Student_LastName_Label {
@@ -223,11 +277,29 @@ namespace MIDS207_Project.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ¡Se ha inactivado correctamente el alumno!.
+        /// </summary>
+        public static string Student_Message_Inactive {
+            get {
+                return ResourceManager.GetString("Student_Message_Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Segundo nombre.
         /// </summary>
         public static string Student_MiddleName_Label {
             get {
                 return ResourceManager.GetString("Student_MiddleName_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string Student_No_Confirm {
+            get {
+                return ResourceManager.GetString("Student_No_Confirm", resourceCulture);
             }
         }
         
@@ -462,6 +534,15 @@ namespace MIDS207_Project.Resources {
         public static string Student_ViewFile_Label {
             get {
                 return ResourceManager.GetString("Student_ViewFile_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sí.
+        /// </summary>
+        public static string Student_Yes_Confirm {
+            get {
+                return ResourceManager.GetString("Student_Yes_Confirm", resourceCulture);
             }
         }
         

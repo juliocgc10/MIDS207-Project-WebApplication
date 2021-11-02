@@ -64,7 +64,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                 $("#hdnStudentId").val(null);
                 $("#studentForm").trigger("reset");
                 $(".fileDownload").hide();
-                $("#titleStudent").text("Agregar alumno")
+                $("#titleStudent").text(defaults.Messages.Student_Add)
 
             });
         } catch (e) {
@@ -130,7 +130,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                                     "data": "Gender"
                                 }, {
                                     "data": "IsActive", "render": function (data, type, row) {
-                                        return data ? '<span class="label label-success">Activo</span >' : '<span class="label label-danger">Inactivo</span >';
+                                        return data ? '<span class="label label-success">' + defaults.Messages.Student_Active_Span + '</span > ' : ' < span class="label label-danger">' + defaults.Messages.Student_Active_Span + '</span > ';
                                     }
                                 }, {
                                     "data": "Email"
@@ -159,8 +159,8 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                                     }
                                 }, {
                                     "data": "StudentID", "render": function (data, type, row) {
-                                        return '<button type="button" class="btn btn-danger btn-sm" title="Eliminar" onclick=MIDS207_Project.Student.inactiveStudent(' + data + ')><span class="glyphicon glyphicon-trash"></span></button> ' +
-                                            '<button type="button" class="btn btn-info btn-sm" title="Editar" onclick=MIDS207_Project.Student.edit(' + data + ')><span class="glyphicon glyphicon-edit"></span></button> ';
+                                        return '<button type="button" class="btn btn-danger btn-sm" title="' + defaults.Messages.Student_Delete_Title + '" onclick=MIDS207_Project.Student.inactiveStudent(' + data + ')><span class="glyphicon glyphicon-trash"></span></button> ' +
+                                            '<button type="button" class="btn btn-info btn-sm" title="' + defaults.Messages.Student_Edit_Title + '" onclick=MIDS207_Project.Student.edit(' + data + ')><span class="glyphicon glyphicon-edit"></span></button> ';
                                     }
                                 }
 
@@ -195,11 +195,11 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
         try {
 
             swalBootstrap.fire({
-                title: '¿Está usted seguro que desea Eliminar (Inactivar) el usuario?',
+                title: defaults.Messages.Student_Confirm_Inactive,
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Sí',
-                cancelButtonText: 'No',
+                confirmButtonText: defaults.Messages.Student_Yes_Confirm,
+                cancelButtonText: defaults.Messages.Student_No_Confirm,
 
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -217,7 +217,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                         if (response.IsSuccess) {
 
                             Swal.fire({
-                                title: '¡Se ha inactivado correctamente el alumno',
+                                title: defaults.Messages.Student_Message_Inactive,
                                 icon: 'success',
                                 showConfirmButton: false,
                                 timer: 1500
@@ -292,7 +292,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
 
 
                     $(".fileDownload").show();
-                    $("#titleStudent").text("Editar alumno")
+                    $("#titleStudent").text(defaults.Messages.Student_Edit)
 
                     $("input[type=file]").val('');
 
@@ -399,7 +399,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
     function validateStudent() {
         $("#studentForm").validate({
             rules: {
-                MiddleName: {                    
+                MiddleName: {
                     maxlength: 50
                 },
                 FirstName: {
@@ -410,7 +410,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                     required: true,
                     maxlength: 50
                 },
-                PostalCode: {                    
+                PostalCode: {
                     maxlength: 5
                 },
                 State: {
@@ -418,7 +418,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                 },
                 Gender: {
                     required: true
-                },                
+                },
                 Password: {
                     required: true
                 },
@@ -430,29 +430,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
         });
     }
 
-    $.extend($.validator.messages, {
-        required: "Este campo es obligatorio.",
-        remote: "Por favor, rellena este campo.",
-        email: "Por favor, escribe una dirección de correo válida.",
-        url: "Por favor, escribe una URL válida.",
-        date: "Por favor, escribe una fecha válida.",
-        dateISO: "Por favor, escribe una fecha (ISO) válida.",
-        number: "Por favor, escribe un número válido.",
-        digits: "Por favor, escribe sólo dígitos.",
-        creditcard: "Por favor, escribe un número de tarjeta válido.",
-        equalTo: "Por favor, escribe el mismo valor de nuevo.",
-        extension: "Por favor, escribe un valor con una extensión aceptada.",
-        maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
-        minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
-        rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-        range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-        max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-        min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}."),
-        nifES: "Por favor, escribe un NIF válido.",
-        nieES: "Por favor, escribe un NIE válido.",
-        cifES: "Por favor, escribe un CIF válido."
-    });
-
+   
 
     $("input[type=file]").change(function () {
 
