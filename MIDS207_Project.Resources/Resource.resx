@@ -132,8 +132,23 @@
   <data name="Student_BirthDate_Label" xml:space="preserve">
     <value>Fecha de nacimiento *</value>
   </data>
+  <data name="Student_CanUseCURP" xml:space="preserve">
+    <value>Ya se encuentra almacenado el CURP en el sistema, favor de verificar</value>
+  </data>
+  <data name="Student_CanUseEmail" xml:space="preserve">
+    <value>Ya se encuentra almacenado el correo electrónico en el sistema, favor de verificar</value>
+  </data>
+  <data name="Student_CanUseRFC" xml:space="preserve">
+    <value>Ya se encuentra almacenado el RFC en el sistema, favor de verificar</value>
+  </data>
   <data name="Student_Close" xml:space="preserve">
     <value>Cerrar</value>
+  </data>
+  <data name="Student_ConfirmAdd" xml:space="preserve">
+    <value>¡Se a agregado correctamente el alumno!</value>
+  </data>
+  <data name="Student_ConfirmUpdate" xml:space="preserve">
+    <value>¡Se ha actualizado correctamente el alumno!</value>
   </data>
   <data name="Student_Confirm_Inactive" xml:space="preserve">
     <value>¿Está usted seguro que desea Eliminar (Inactivar) el usuario?</value>
@@ -201,11 +216,17 @@
   <data name="Student_Ok" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="Student_PasswordFormatCheck" xml:space="preserve">
+    <value>La contraseña debe de contener al menos 1 dígito, 1 letra en minúscula, 1 letra en mayúscula y tener por lo menos 5 carácteres</value>
+  </data>
   <data name="Student_Password_Label" xml:space="preserve">
     <value>Contraseña *</value>
   </data>
   <data name="Student_PhoneNumber_Label" xml:space="preserve">
     <value>Número teléfonico</value>
+  </data>
+  <data name="Student_PhoneNumber_Title" xml:space="preserve">
+    <value>Ingrese el número de teléfono a 10 dígitos</value>
   </data>
   <data name="Student_RepeatPassword_Label" xml:space="preserve">
     <value>Repetir contraseña *</value>

@@ -106,6 +106,33 @@ namespace MIDS207_Project.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ya se encuentra almacenado el CURP en el sistema, favor de verificar.
+        /// </summary>
+        public static string Student_CanUseCURP {
+            get {
+                return ResourceManager.GetString("Student_CanUseCURP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ya se encuentra almacenado el correo electrónico en el sistema, favor de verificar.
+        /// </summary>
+        public static string Student_CanUseEmail {
+            get {
+                return ResourceManager.GetString("Student_CanUseEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ya se encuentra almacenado el RFC en el sistema, favor de verificar.
+        /// </summary>
+        public static string Student_CanUseRFC {
+            get {
+                return ResourceManager.GetString("Student_CanUseRFC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cerrar.
         /// </summary>
         public static string Student_Close {
@@ -120,6 +147,24 @@ namespace MIDS207_Project.Resources {
         public static string Student_Confirm_Inactive {
             get {
                 return ResourceManager.GetString("Student_Confirm_Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¡Se a agregado correctamente el alumno!.
+        /// </summary>
+        public static string Student_ConfirmAdd {
+            get {
+                return ResourceManager.GetString("Student_ConfirmAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ¡Se ha actualizado correctamente el alumno!.
+        /// </summary>
+        public static string Student_ConfirmUpdate {
+            get {
+                return ResourceManager.GetString("Student_ConfirmUpdate", resourceCulture);
             }
         }
         
@@ -322,11 +367,29 @@ namespace MIDS207_Project.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to La contraseña debe de contener al menos 1 dígito, 1 letra en minúscula, 1 letra en mayúscula y tener por lo menos 5 carácteres.
+        /// </summary>
+        public static string Student_PasswordFormatCheck {
+            get {
+                return ResourceManager.GetString("Student_PasswordFormatCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Número teléfonico.
         /// </summary>
         public static string Student_PhoneNumber_Label {
             get {
                 return ResourceManager.GetString("Student_PhoneNumber_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingrese el número de teléfono a 10 dígitos.
+        /// </summary>
+        public static string Student_PhoneNumber_Title {
+            get {
+                return ResourceManager.GetString("Student_PhoneNumber_Title", resourceCulture);
             }
         }
         

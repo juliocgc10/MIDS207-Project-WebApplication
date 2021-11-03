@@ -217,5 +217,41 @@ namespace MIDS207_Project.DataAccess
             return studentoDto;
 
         }
+
+        public bool CanUseRFC(int studentId, string rfc)
+        {
+            using (cpdsEntities context = new cpdsEntities())
+            {
+                Student student = context.Students.FirstOrDefault(x => x.StudentID == studentId);
+
+                if (student == null) return !context.Students.Any(x => x.RFC.ToUpper().Trim() == rfc);
+
+                return student.RFC.ToUpper().Trim().Equals(rfc) || !context.Students.Any(x => x.RFC.ToUpper().Trim() == rfc);
+            }
+        }
+
+        public bool CanUseCURP(int studentId, string curp)
+        {
+            using (cpdsEntities context = new cpdsEntities())
+            {
+                Student student = context.Students.FirstOrDefault(x => x.StudentID == studentId);
+
+                if (student == null) return !context.Students.Any(x => x.CURP.ToUpper().Trim() == curp);
+
+                return student.CURP.ToUpper().Trim().Equals(curp) || !context.Students.Any(x => x.CURP.ToUpper().Trim() == curp);
+            }
+        }
+
+        public bool CanUseEmail(int studentId, string email)
+        {
+            using (cpdsEntities context = new cpdsEntities())
+            {
+                Student student = context.Students.FirstOrDefault(x => x.StudentID == studentId);
+
+                if (student == null) return !context.Students.Any(x => x.Email.ToUpper().Trim() == email);
+
+                return student.Email.ToUpper().Trim().Equals(email) || !context.Students.Any(x => x.Email.ToUpper().Trim() == email);
+            }
+        }
     }
 }

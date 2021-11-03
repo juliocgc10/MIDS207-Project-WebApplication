@@ -2,10 +2,7 @@
 
 @{
     ViewBag.Title = "Alumnos";
-    //string serverPath = System.Configuration.ConfigurationManager.AppSettings["UrlWebApp"];
     string urlWebApi = System.Configuration.ConfigurationManager.AppSettings["UrlWebApi"];
-
-
 }
 
 
@@ -173,7 +170,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label class="control-label" for="inputPhoneNumber">@Resource.Student_PhoneNumber_Label</label>
-                                <input class="form-control" id="inputPhoneNumber" name="PhoneNumber" type="tel" maxlength="10" />
+                                <input class="form-control" id="inputPhoneNumber" name="PhoneNumber" pattern="[1-9]{1}[0-9]{9}" title="@Resource.Student_PhoneNumber_Title" type="tel" maxlength="10" />
                             </div>
 
                             <div class="form-group col-md-4">
@@ -297,7 +294,13 @@
                 Student_Yes_Confirm: '@Resource.Student_Yes_Confirm',
                 Student_No_Confirm: '@Resource.Student_No_Confirm',
                 Student_Message_Inactive: '@Resource.Student_Message_Inactive',
-                Student_Edit: '@Resource.Student_Edit'
+                Student_Edit: '@Resource.Student_Edit',
+                Student_PasswordFormatCheck: '@Resource.Student_PasswordFormatCheck',
+                Student_CanUseEmail: '@Resource.Student_CanUseEmail',
+                Student_CanUseCURP: '@Resource.Student_CanUseCURP',
+                Student_CanUseRFC: '@Resource.Student_CanUseRFC',
+                Student_ConfirmAdd: '@Resource.Student_ConfirmAdd',
+                Student_ConfirmUpdate: '@Resource.Student_ConfirmUpdate'
             }
         };
 

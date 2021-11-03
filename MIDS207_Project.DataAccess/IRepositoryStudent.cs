@@ -22,6 +22,12 @@ namespace MIDS207_Project.DataAccess
 
         StudentDto InactiveStudent(int studentId);
 
-        
+        bool CanUseRFC(int studentId, string rfc);
+
+        bool CanUseCURP(int studentId, string curp);
+
+        bool CanUseEmail(int studentId, string email);
+
+
     }
 }

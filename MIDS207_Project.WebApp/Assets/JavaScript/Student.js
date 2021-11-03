@@ -80,7 +80,32 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
         }
 
 
+        $('#inputRFC').on('change', function (e) {
+            try {
+                canUseRFC(this);
+            } catch (e) {
+                alert("Evento: canUseRFC change -> \nException: " + e.message);
+            }
 
+        });
+
+        $('#inputCURP').on('change', function (e) {
+            try {
+                canUseCURP(this);
+            } catch (e) {
+                alert("Evento: canUseRFC change -> \nException: " + e.message);
+            }
+
+        });
+
+        $('#inputEmail').on('change', function (e) {
+            try {
+                canUseEmail(this);
+            } catch (e) {
+                alert("Evento: canUseRFC change -> \nException: " + e.message);
+            }
+
+        });
 
 
 
@@ -130,7 +155,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                                     "data": "Gender"
                                 }, {
                                     "data": "IsActive", "render": function (data, type, row) {
-                                        return data ? '<span class="label label-success">' + defaults.Messages.Student_Active_Span + '</span > ' : ' < span class="label label-danger">' + defaults.Messages.Student_Active_Span + '</span > ';
+                                        return data ? ('<span class="label label-success">' + defaults.Messages.Student_Active_Span + '</span> ') : ('<span class="label label-danger">' + defaults.Messages.Student_Inactive_Span + '</span >');
                                     }
                                 }, {
                                     "data": "Email"
@@ -265,7 +290,6 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
 
             $.ajax(settings).done(function (response) {
 
-                console.log(response);
 
                 if (response.IsSuccess) {
                     var student = response.Data;
@@ -372,6 +396,13 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                 LoadingHider('studentForm');
 
                 if (response.IsSuccess) {
+                    Swal.fire({
+                        title: student.StudentID != 0 ? defaults.Messages.Student_ConfirmUpdate : defaults.Messages.Student_ConfirmAdd,
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
                     $('.nav-tabs a[href="#searchTab"]').tab('show');
                     $("#hdnStudentId").val(student.StudentID);
                     loadStudents();
@@ -396,6 +427,169 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
         }
     }
 
+    function canUseRFC(rfc) {
+        try {
+            LoadingShow('studentForm');
+
+            var studentId = $("#hdnStudentId").val() == '' ? 0 : $("#hdnStudentId").val();
+
+            var settings = {
+                url: defaults.UrlWepApi + "api/Student/CanUseRFC?studenId=" + studentId + "&rfc=" + $(rfc).val(),
+                async: true,
+                type: 'GET',
+                dataType: 'json',
+            };
+
+            $.ajax(settings).done(function (response) {
+
+                console.log(response);
+
+                if (response.IsSuccess) {
+
+                    if (!response.Data) {
+                        Swal.fire({
+                            title: defaults.Messages.Student_CanUseRFC,
+                            icon: 'info'
+                        });
+                        $(rfc).val('');
+                    }
+
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: response.Message
+                    });
+
+                }
+
+                LoadingHider('studentForm');
+            }).fail(function (jqXHR, textStatus, err) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...' + err,
+                    text: textStatus
+                });
+                LoadingHider('studentForm');
+            });
+
+
+
+        } catch (e) {
+            alert("Method: update \nException: " + e.message);
+        }
+    }
+
+    function canUseCURP(curp) {
+        try {
+            LoadingShow('studentForm');
+
+            var studentId = $("#hdnStudentId").val() == '' ? 0 : $("#hdnStudentId").val();
+
+            var settings = {
+                url: defaults.UrlWepApi + "api/Student/CanUseCURP?studenId=" + studentId + "&curp=" + $(curp).val(),
+                async: true,
+                type: 'GET',
+                dataType: 'json',
+            };
+
+            $.ajax(settings).done(function (response) {
+
+                console.log(response);
+
+                if (response.IsSuccess) {
+
+                    if (!response.Data) {
+                        Swal.fire({
+                            title: defaults.Messages.Student_CanUseCURP,
+                            icon: 'info'
+                        });
+                        $(curp).val('');
+                    }
+
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: response.Message
+                    });
+
+                }
+
+                LoadingHider('studentForm');
+            }).fail(function (jqXHR, textStatus, err) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...' + err,
+                    text: textStatus
+                });
+                LoadingHider('studentForm');
+            });
+
+
+
+        } catch (e) {
+            alert("Method: update \nException: " + e.message);
+        }
+    }
+
+    function canUseEmail(email) {
+        try {
+            LoadingShow('studentForm');
+
+            var studentId = $("#hdnStudentId").val() == '' ? 0 : $("#hdnStudentId").val();
+
+            var settings = {
+                url: defaults.UrlWepApi + "api/Student/CanUseEmail?studenId=" + studentId + "&email=" + $(email).val(),
+                async: true,
+                type: 'GET',
+                dataType: 'json',
+            };
+
+            $.ajax(settings).done(function (response) {
+
+                console.log(response);
+
+                if (response.IsSuccess) {
+
+                    if (!response.Data) {
+                        Swal.fire({
+                            title: defaults.Messages.Student_CanUseEmail,
+                            icon: 'info'
+                        });
+                        $(email).val('');
+                    }
+
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: response.Message
+                    });
+
+                }
+
+                LoadingHider('studentForm');
+            }).fail(function (jqXHR, textStatus, err) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...' + err,
+                    text: textStatus
+                });
+                LoadingHider('studentForm');
+            });
+
+
+
+        } catch (e) {
+            alert("Method: update \nException: " + e.message);
+        }
+    }
+
+    $.validator.addMethod("passwordFormatCheck", function (value, element) {
+        return this.optional(element) || /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{5,}$/.test(value);
+    }, 'La contraseña debe de contener al menos 1 dígito, 1 letra en minúscula, 1 letra en mayúscula y tener por lo menos 5 carácteres');
+
     function validateStudent() {
         $("#studentForm").validate({
             rules: {
@@ -404,11 +598,17 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                 },
                 FirstName: {
                     required: true,
-                    maxlength: 50
+                    maxlength: 50,
+                    normalizer: function (value) {
+                        return $.trim(value);
+                    }
                 },
                 LastName: {
                     required: true,
-                    maxlength: 50
+                    maxlength: 50,
+                    normalizer: function (value) {
+                        return $.trim(value);
+                    }
                 },
                 PostalCode: {
                     maxlength: 5
@@ -419,8 +619,12 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
                 Gender: {
                     required: true
                 },
+                PhoneNumber: {
+                    number: true
+                },
                 Password: {
-                    required: true
+                    required: true,
+                    passwordFormatCheck: true
                 },
                 RepeatPassword: {
                     required: true,
@@ -430,7 +634,7 @@ MIDS207_Project.Student = (function ($, window, document, navigator, localStorag
         });
     }
 
-   
+
 
     $("input[type=file]").change(function () {
 

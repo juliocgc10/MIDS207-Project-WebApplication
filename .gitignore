@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /MIDS207_Project.WebApi/Files/12
+/MIDS207_Project.WebApi/Files

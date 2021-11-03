@@ -131,5 +131,77 @@ namespace MIDS207_Project.BusinessLogic
             }
             return response;
         }
+
+        public ResponseService CanUseRFC(int studentId, string rfc)
+        {
+            ResponseService response = new ResponseService();
+            try
+            {
+                if (string.IsNullOrEmpty(rfc))
+                    response.Data = false;
+                else
+                {
+                    rfc = rfc?.ToUpper().Trim();
+                    response.Data = repositoryStudent.CanUseRFC(studentId, rfc);
+                }
+                response.IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.IsException = true;
+                response.Message = string.Format(ExceptionMessage.ErrorShowUser, DateTime.Now.ToString(), new StackTrace().GetFrame(1).GetMethod().Name, ex.Message);
+                response.InnerException = string.Format(ExceptionMessage.ErrorException, DateTime.Now.ToString(), ex.StackTrace, ex.GetOriginalException().Message);
+            }
+            return response;
+        }
+
+        public ResponseService CanUseCURP(int studentId, string curp)
+        {
+            ResponseService response = new ResponseService();
+            try
+            {
+                if (string.IsNullOrEmpty(curp))
+                    response.Data = false;
+                else
+                {
+                    curp = curp?.ToUpper().Trim();
+                    response.Data = repositoryStudent.CanUseCURP(studentId, curp);
+                }
+                response.IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.IsException = true;
+                response.Message = string.Format(ExceptionMessage.ErrorShowUser, DateTime.Now.ToString(), new StackTrace().GetFrame(1).GetMethod().Name, ex.Message);
+                response.InnerException = string.Format(ExceptionMessage.ErrorException, DateTime.Now.ToString(), ex.StackTrace, ex.GetOriginalException().Message);
+            }
+            return response;
+        }
+
+        public ResponseService CanUseEmail(int studentId, string email)
+        {
+            ResponseService response = new ResponseService();
+            try
+            {
+                if (string.IsNullOrEmpty(email))
+                    response.Data = false;
+                else
+                {
+                    email = email?.ToUpper().Trim();
+                    response.Data = repositoryStudent.CanUseEmail(studentId, email);
+                }
+                response.IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.IsException = true;
+                response.Message = string.Format(ExceptionMessage.ErrorShowUser, DateTime.Now.ToString(), new StackTrace().GetFrame(1).GetMethod().Name, ex.Message);
+                response.InnerException = string.Format(ExceptionMessage.ErrorException, DateTime.Now.ToString(), ex.StackTrace, ex.GetOriginalException().Message);
+            }
+            return response;
+        }
     }
 }
